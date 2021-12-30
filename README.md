@@ -3,7 +3,7 @@
 In search of truth, simplicity is needed. There exist heavy-weighted libraries, but as you know, we need to go bare bone sometimes.
 Here is a minimal implementation of Gaussian process regression in PyTorch.
 
-The implementation generally follows Algorith 2.1 in [Gaussian Process for Machine Learning (Rassmussen and Williams, 2006)](http://www.gaussianprocess.org/gpml/).
+The implementation generally follows Algorithm 2.1 in [Gaussian Process for Machine Learning (Rassmussen and Williams, 2006)](http://www.gaussianprocess.org/gpml/).
 
 
 * Author: [Sangwoong Yoon](https://swyoon.github.io/)
@@ -11,7 +11,7 @@ The implementation generally follows Algorith 2.1 in [Gaussian Process for Machi
 ## Features
 
 * Gaussian process regression with squared exponential kernel.
-* Hyperparameter optimization via marginal likelihood maximization using Pytorch built-in autograd functionality.
+* Hyperparameter optimization via marginal likelihood maximization using Pytorch built-in autograd functionality. (See `demo.ipynb`)
 * Unittesting using Pytest.
 
 ## Dependency
