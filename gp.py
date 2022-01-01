@@ -29,7 +29,7 @@ class GP(nn.Module):
         k = self.kernel_mat(self.X, x)
         v = torch.linalg.solve(L, k)
         mu = k.T.mm(alpha)
-        var = self.noise_scale - torch.diag(v.T.mm(v))
+        var = self.length_scale + self.noise_scale - torch.diag(v.T.mm(v))
         return mu, var
 
     def fit(self, X, y):

@@ -14,6 +14,10 @@ The implementation generally follows Algorithm 2.1 in [Gaussian Process for Mach
 * Hyperparameter optimization via marginal likelihood maximization using Pytorch built-in autograd functionality. (See `demo.ipynb`)
 * Unittesting using Pytest.
 
+## Updates
+
+* 2022-01-01: Bugfix in predictive variance computation
+
 ## Dependency
 
 * Numpy
