@@ -6,10 +6,10 @@ from gp import GP
 
 def test_gp():
     X = torch.randn(10, 1)
-    f = torch.sin(X * 2 * np.pi /4).flatten()
+    f = torch.sin(X * 2 * np.pi / 4).flatten()
     y = f + torch.randn_like(f) * 0.1
-    y = y[:,None]
-    grid = torch.linspace(-5, 5, 20)[:,None]
+    y = y[:, None]
+    grid = torch.linspace(-5, 5, 20)[:, None]
 
     gp = GP()
     gp.fit(X, y)
@@ -20,10 +20,10 @@ def test_gp():
 
 def test_gp_opt():
     X = torch.randn(10, 1)
-    f = torch.sin(X * 2 * np.pi /4).flatten()
+    f = torch.sin(X * 2 * np.pi / 4).flatten()
     y = f + torch.randn_like(f) * 0.1
-    y = y[:,None]
-    grid = torch.linspace(-5, 5, 20)[:,None]
+    y = y[:, None]
+    grid = torch.linspace(-5, 5, 20)[:, None]
 
     gp = GP()
     opt = SGD(gp.parameters(), lr=0.01)
