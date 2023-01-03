@@ -6,7 +6,7 @@ Here is a minimal implementation of Gaussian process regression in PyTorch.
 The implementation generally follows Algorithm 2.1 in [Gaussian Process for Machine Learning (Rassmussen and Williams, 2006)](http://www.gaussianprocess.org/gpml/).
 
 
-* Author: [Sangwoong Yoon](https://swyoon.github.io/)
+* Author: [Sangwoong Yoon](https://swyoon.github.io/), [Hyeokjun Kwon](linkedin.com/in/hyeokjun-kwon-24b992210)
 
 ## Features
 
