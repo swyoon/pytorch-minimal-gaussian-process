@@ -17,6 +17,7 @@ The implementation generally follows Algorithm 2.1 in [Gaussian Process for Mach
 ## Updates
 
 * 2022-01-01: Bugfix in predictive variance computation
+* 2023-01-03: Implement binary Laplace Gaussian process regression
 
 ## Dependency
 
@@ -26,7 +27,7 @@ The implementation generally follows Algorithm 2.1 in [Gaussian Process for Mach
 * Matplotlib (for demo)
 
 ## How to Use
-
+### Gaussian process regression
 ```python
 from gp import GP
 
@@ -41,6 +42,21 @@ gp.fit(X, y)
 mu, var = gp.forward(grid)
 ```
 
+### Gaussian process classification
+```python
+from gp import GP
+
+# generate data
+X = torch.randn(100,1)
+f = torch.sin(X * 3 * np.pi / 4)
+y = (f > 0.).int() * 2 - 1
+grid = torch.linspace(-5, 5, 200)[:,None]
+
+# run GP
+gp = BinaryLaplaceGPC()  # you may specify initial hyperparameters using keyword arguments
+gp.fit(X, y)
+mu, var, pi = gp.forward(grid)
+```
 ## Unittesting
 
 ```

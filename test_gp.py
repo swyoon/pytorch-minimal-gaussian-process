@@ -34,10 +34,8 @@ def test_gp_opt():
 
 def test_gpc():
     X = torch.randn(10, 1)
-    f = torch.sin(X * 3 * np.pi / 4).flatten()
-    y = f + torch.randn_like(f) * 0.1
-    y = (f > 0.0).int() * 2 - 1
-    y = y[:, None]
+    f = torch.sin(X * 3 * np.pi / 4)
+    y = (f > 0.).int() * 2 - 1
     grid = torch.linspace(-5, 5, 20)[:, None]
 
     gp = BinaryLaplaceGPC()
@@ -50,10 +48,8 @@ def test_gpc():
 
 def test_gpc_opt():
     X = torch.randn(10, 1)
-    f = torch.sin(X * 3 * np.pi / 4).flatten()
-    y = f + torch.randn_like(f) * 0.1
-    y = (f > 0.0).int() * 2 - 1
-    y = y[:, None]
+    f = torch.sin(X * 3 * np.pi / 4)
+    y = (f > 0.).int() * 2 - 1
     grid = torch.linspace(-5, 5, 20)[:, None]
 
     gp = BinaryLaplaceGPC()
